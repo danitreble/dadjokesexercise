@@ -38,7 +38,7 @@ class Deck extends Component {
               window.location.reload(false);
             } else {
               this.setState({
-                drawnCards: [...this.state.drawnCards, response.data.cards],
+                drawnCards: [...this.state.drawnCards, response.data.cards[0]],
               });
             }
           });
@@ -65,17 +65,14 @@ class Deck extends Component {
           Draw Card
         </button>
         <div className="flex justify-center">
-          {this.state.drawnCards.map((cards) => {
-            return cards.map((c) => (
-              <Card
-                imageUrl={c.image}
-                value={c.value}
-                suit={c.suit}
-                angle={c.angle}
-                rotation={c.rotation}
+          {this.state.drawnCards.map((cards) => <Card
+                imageUrl={cards.image}
+                value={cards.value}
+                suit={cards.suit}
+                angle={cards.angle}
+                rotation={cards.rotation}
               />
-            ));
-          })}
+            )}
         </div>
       </div>
     );
