@@ -5,9 +5,7 @@ import axios from "axios";
 class Deck extends Component {
   state = {
     deckId: [],
-    drawnCards: [],
-    rotation: [],
-    angle: [],
+    drawnCards: []
   };
 
   async componentDidMount() {
