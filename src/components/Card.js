@@ -14,7 +14,6 @@ class Card extends Component {
           src={`${this.props.imageUrl}`}
           alt={`${this.props.value} of ${this.props.suit}`}
         />
-        {console.log(this.props.angle, this.props.rotation)}
         
       </div>
     );

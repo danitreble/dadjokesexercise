@@ -32,7 +32,6 @@ class Deck extends Component {
           .then((response) => {
             response.data.cards[0].rotation = ranRotation;
             response.data.cards[0].angle = ranAngle;
-            console.log(response.data.cards);
             if (response.data.remaining === 0) {
               alert("No more cards remaining!");
               window.location.reload(false);
@@ -71,6 +70,7 @@ class Deck extends Component {
                 suit={cards.suit}
                 angle={cards.angle}
                 rotation={cards.rotation}
+                key={cards.code}
               />
             )}
         </div>
