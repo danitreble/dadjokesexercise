@@ -7,7 +7,7 @@ class JokeBoard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      jokes: [],
+      jokes: JSON.parse(window.localStorage.getItem("jokes") || "[]"),
       numberOfJokes: 10,
       loading: false,
     };
@@ -28,6 +28,9 @@ class JokeBoard extends Component {
             response.data.funFactor = 0;
             jokes.push(response.data);
             this.setState({ jokes: jokes });
+            window.localStorage.setItem(
+              "jokes",
+              JSON.stringify(jokes));
           } else {
             n--;
           }
@@ -38,7 +41,10 @@ class JokeBoard extends Component {
   }
 
   componentDidMount() {
+    if (this.state.jokes.length === 0)
+    {
     this.getJokes();
+    }
   }
 
   render() {
