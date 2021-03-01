@@ -7,5 +7,16 @@
 }
 
 body {
-  background-color: green;
+  width: 100px;
+  height: 100px;
+  background-color: linear-gradient(
+    to left top #97e5fd 50%,
+    #f368c9 50%
+  );
+  font-family: sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
 }
